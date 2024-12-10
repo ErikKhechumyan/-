@@ -1,0 +1,129 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduConnect</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img width="150" src="{% static 'images/i.png' %}" alt="">
+            </a>
+            <ul class="menu">
+                <li><a href="{% url 'Index' %}">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="{% url 'About' %}">About</a></li>
+                <li><a href="messages.html">Messages</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li>
+                    <div class="lang_box dropdown"> 
+                            <div class="dropdown-menu "> 
+                            </div> 
+                            <span> 
+                                    <!-- <form action="{% url 'set_language' %}" method="post">{% csrf_token %} 
+                                        <input name="next" type="hidden" value="{{ redirect_to }}"> 
+                                    <select name="language"> 
+                                        {% get_current_language as LANGUAGE_CODE %} 
+                                        {% get_available_languages as LANGUAGES %} 
+                                        {% get_language_info_list for LANGUAGES as languages %}{% for language in languages %} 
+                                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} 
+                                    selected{% endif %}> 
+                                        {{ language.name_local }} ({{ language.code }}) 
+                                    </option> 
+                                        {% endfor %} 
+                                    </select> 
+                                    <input type="submit" value="Go"> 
+                                    </form> --> 
+                    
+                    
+                                    <form id="language-form" action="{% url 'set_language' %}" method="post"> 
+                                    {% csrf_token %} 
+                                    <input name="next" type="hidden" value="{{ redirect_to }}"> 
+                                    <div class="language-dropdown"> 
+                                        <!-- Display the currently selected language dynamically --> 
+                                        {% get_language_info_list for LANGUAGES as languages %} 
+                                        {% get_current_language as current_language %} 
+                                        <div class="selected-language" id="selected-language"> 
+                                            {% for language in languages %} 
+                                                {% if language.code == current_language %} 
+                                                    <img src="{% static 'images/' %}{{ language.code }}.png" alt="{{ language.name_local }} flag" class="language-icon"> 
+
+                                                {% endif %} 
+                                            {% endfor %} 
+                                        </div> 
+                                        <!-- Language options will be dynamically added by JavaScript --> 
+                                        <div class="language-options" id="language-options"> 
+                                            {% for language in languages %} 
+                                                <div class="language-option" data-code="{{ language.code }}"> 
+                                                    <img src="{% static 'images//' %}{{ language.code }}.png" alt="{{ language.name_local }} flag" class="language-icon"> 
+ 
+                                                </div> 
+                                            {% endfor %} 
+                                        </div> 
+                                    </div> 
+                                    <input type="hidden" name="language" id="selected-language-input"> 
+                                </form> 
+                    
+                                
+                                    </li> 
+                    
+
+                            </span> 
+                        </div>
+                </li>
+            </ul>
+            
+            <a href="{% url 'login' %}" class="auth-btn">Sign In</a>
+            
+        </nav>
+        
+    </header>
+    {% block content %} {% endblock %}
+                
+    <footer>
+        <p>&copy; 2024 EduConnect. All rights reserved.</p>
+    </footer>
+
+    <script> 
+        document.addEventListener('DOMContentLoaded', function() { 
+            const form = document.getElementById('language-form'); 
+            const selectedLanguage = document.getElementById('selected-language'); 
+            const languageOptions = document.getElementById('language-options'); 
+    
+            // Handle click on selected language to toggle options 
+            selectedLanguage.addEventListener('click', function() { 
+                languageOptions.classList.toggle('show'); 
+            }); 
+    
+            // Handle click on language options 
+            const options = document.querySelectorAll('.language-option'); 
+            options.forEach(option => { 
+                option.addEventListener('click', function() { 
+                    const code = this.dataset.code; 
+                    selectedLanguage.innerHTML = this.innerHTML; 
+                    languageOptions.classList.remove('show'); 
+                    document.getElementById('selected-language-input').value = code; 
+    
+                    // Automatically submit the form on language selection 
+                    form.submit(); 
+                }); 
+            }); 
+    
+            // Close the dropdown when clicking outside of it 
+            window.addEventListener('click', function(event) { 
+                if (!selectedLanguage.contains(event.target) && !languageOptions.contains(event.target)) { 
+                    languageOptions.classList.remove('show'); 
+                } 
+            }); 
+        }); 
+    </script>
+
+
+</body>
+</html>
