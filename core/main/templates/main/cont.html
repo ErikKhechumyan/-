@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+        <style>
+            .contact-h2 {
+                font-size: 24px;
+                color: #333333;
+                text-align: left;
+            }
+            .contact-info {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 50px;
+            }
+           
+            .info-item {
+                display: flex;
+                align-items: center;
+                margin-top: -28px;
+
+            }
+            .info-item:last-child {
+                margin-bottom: 0;
+            }
+            .info-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background-color: #ffeecf;
+                border-radius: 50%;
+                margin-right: 15px;
+            }
+            .info-icon img {
+                width: 20px;
+                height: 20px;
+            }
+            .info-text {
+                font-size: 16px;
+                color: #666666;
+            }
+            .info-text strong {
+                display: block;
+                color: #333333;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="head">
+            <div class="content">
+                <div class="left-side">
+                    <p class="title">
+                        Lets Get In Touch!
+                    </p>
+                    <p class="title-text">
+                        Fill in the form below and I'll get back to you soon
+                    </p>
+                    <form action="">
+                        <div class="group">      
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Name</label>
+                        </div>
+                        <div class="group">      
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Email</label>
+                        </div>
+                        <div class="group">      
+                            <textarea required></textarea>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Write your message here</label>
+                        </div>
+                        <button class="button-36" role="button">GET IN TOUCH</button>
+                    </form>
+                    <h2 class="contact-h2">Contact Info</h2>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email Icon">
+                            </div>
+                            <div class="info-text">
+                                <strong>EMAIL</strong>
+                                info@therockstar.com
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="https://cdn-icons-png.flaticon.com/512/725/725643.png" alt="Phone Icon">
+                            </div>
+                            <div class="info-text">
+                                <strong>CONTACT NUMBER</strong>
+                                (202) 555 0409 - (202) 555 0408
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <img width="450px" height="700px" src="./image/call_center_woman_resized.png" alt="">
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

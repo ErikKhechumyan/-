@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+    <style>
+        .head{
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .head-left{
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .content-block{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+        .content{
+            width: 980px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
+        #head-image{
+            text-transform: uppercase;
+            font-size: 18px;
+            color: #777;
+            font-weight: 700;
+        }
+        .head-left{
+            display: flex;
+        }
+        .head-right>p{
+            color: #777;;
+        }
+        .head-right{
+            display: flex;
+            gap: 20px;
+            padding-right: 20px;
+        }
+        
+        .middle-content-2{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .middle-content-2-title{
+            margin-top: 60px;
+            margin-bottom: 20px;
+            font-size: 28px;
+            line-height: 30px;
+            text-transform: uppercase;
+        }
+        
+        .middle-content-2-text{
+            font-size: 20px;
+            line-height: 28px;
+            color: #777;
+            text-align: center;
+        }
+        .middle-content-2>img{
+            margin-top: 50px;
+            width: 600px;
+            height: 300px;
+        }
+        .middle-content-3{
+            background-color: #22bf57;
+            height: 230px;
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .middle-content-3>p{
+            width: 588px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 22px;
+            line-height: 28px;
+            color: white;
+            text-align: center;
+        }
+        .middle-content-4-category{
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        
+        }
+        .middle-content-4-category>div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .middle-content-4-category>div>p{
+            text-align: center;
+            color: #777;
+            font-size: 18px;
+            line-height: 22px;
+        }
+        
+        .middle-content-5{
+            background-color: #798df2;;
+            height: 230px;
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .middle-content-5>p{
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 22px;
+            line-height: 28px;
+            color: white;
+            text-align: center;
+        }
+        
+        .middle-content-6{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 20px;
+            background-color: #f2f2f2;;
+        }
+        .middle-content-6>img{
+            margin-top: 50px;
+            width: 345px;
+            height: 226px;
+        }
+        
+        .middle-content-6-text{
+            font-size: 20px;
+            line-height: 28px;
+            color: #777;
+            text-align: center;
+        }
+        
+        .last-content{
+           padding: 30px;
+        }
+        .last-content>p{
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            font-size: 28px;
+            line-height: 30px;
+            text-transform: uppercase;
+        }
+        .partners{
+            display: flex;
+            gap: 19px;
+            flex-wrap: wrap;
+        }
+    </style>
+    <body>
+        <div class="content-block">
+            <div class="content">
+                <div class="head">
+                    <div class="head-left">
+                        <img src="https://www.dasaran.am/static/img/redesign/icon-logo.png" width="40px" height="40px" alt="">
+                        <h3 id="head-image">Մեր մասին</h3>
+                    </div>
+                    <div class="head-right">
+                        <p>Ինչ է Dasaran-ը</p>
+                        <p>Նպատակները</p>
+                        <p>Գործընկերներ</p>
+                    </div>
+                </div>
+                <div class="middle-content">
+                    <iframe src="https://www.youtube.com/embed/NNsmmxO3Bq4?si=4ysrldTr2kU58Ghh" width="980px" height="420px" allowfullscreen frameborder="0"></iframe>
+                    <div class="middle-content-2">
+                        <p class="middle-content-2-title">Ինչ է Dasaran-ը</p>
+                        <p class="middle-content-2-text">
+                            Dasaran-ը 1,214,409 օգտատեր ունեցող կրթական միջավայր է,</br>
+                            որտեղ նորարարական ուսուցումը լայն հորիզոններ է բացում</br>
+                            երեխաների համար:
+                        </p>
+                        <img src="https://www.dasaran.am/static/img/redesign/world.png" alt="">
+                    </div>
+                    <div class="middle-content-3">
+                        <p>
+                            Կրթական ծրագիրը մեկ առցանց հարթակում է համախմբել</br> Հայաստանի և Արցախի հանրակրթական դպրոցներում</br> սովորող բոլոր աշակերտներին, նրանց ծնողներին և</br> ուսուցիչներին:
+                        </p>
+                    </div>
+                    <div class="middle-content-4">
+                        <div class="middle-content-2">
+                            <p class="middle-content-2-title">Առաքելությունը եվ նպատակները</p>
+                            <p class="middle-content-2-text">
+                                Dasaran-ի առաքելությունն է կրթությունը հասանելի դարձնել</br> բոլորին՝ անկախ սոցիալական կարգավիճակից և</br> աշխարհագրական դիրքից, տրամադրել այլընտրանքային</br>   ուսուցման հնարավորություն, հեռահաղորդակցման անվտանգ</br> հարթակ Հայաստանի, Արցախի և Սփյուռքի հայ աշակերտների</br> համար:
+                            </p>
+                            <div class="middle-content-4-category">
+                                <div>
+                                    <img src="https://www.dasaran.am/static/img/redesign/gear.png" alt="">
+                                    <p>Կրթական համակարգի</br> թափանցիկություն և կրթության</br> մատչելիություն արդիական</br> էլեկտրոնային գործիքների միջոցով</p>
+                                </div>
+                                <div>
+                                    <img src="https://www.dasaran.am/static/img/redesign/games.png" alt="">
+                                    <p>Հետաքրքիր, հաճելի և արդյունավետ</br> ուսուցում կրթական խաղերի և առցանց</br> մրցույթների միջոցով</p>
+                                </div>
+                                <div>
+                                    <img src="https://www.dasaran.am/static/img/redesign/community.png" alt="">
+                                    <p>Ուսուցիչ - աշակերտ - ծնող կապի</br> դյուրացում և ամրապնդում</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="middle-content-5">
+                        <p>
+                            Dasaran-ում կարևորվում է անհատականությունը, գնահատվում`</br> տաղանդը, ստեղծարարությունը և աշխատասիրությունը:
+                        </p>
+                    </div>
+                    <div class="middle-content-6">
+                        <p class="middle-content-6-text">
+                            Կրթական ծրագիրը հավասար հնարավորությունների</br> միջավայր է, որի օգնությամբ յուրաքանչյուր հայ երեխա</br> հարթում է իր հաջողության ճանապարհը:
+                        </p>
+                        <img src="https://www.dasaran.am/static/img/redesign/ilustration-winner.png" alt="">
+                    </div>
+                    <div class="last-content">
+                        <p>Գործընկերներ</p>
+                        <div class="partners">
+                            <a><img src="https://www.dasaran.am/static/img/redesign/arm_coat.png"  alt=""></a>
+                            <a><img src="https://www.dasaran.am/static/img/redesign/yerevan.png"  alt=""></a>
+                            <a><img src="https://www.dasaran.am/static/img/redesign/british_council.png"  alt=""></a>
+                            <a><img src="https://www.dasaran.am/static/img/redesign/usa_embassy.png"  alt=""></a>
+                            <a><img src="https://www.dasaran.am/static/img/redesign/counterpart.png"  alt=""></a>
+                            <a><img src="https://www.dasaran.am/static/img/redesign/usaid.png"  alt=""></a>
+                            <a><img src="https://www.dasaran.am/static/img/redesign/img_unicef.png"  alt=""></a>
+                            <a><img src="https://www.dasaran.am/static/img/redesign/save_the_children.png"  alt=""></a>
+                            <a><img src="https://www.dasaran.am/static/img/redesign/publicis.png"  alt=""></a>
+                            <a><img src="https://www.dasaran.am/static/img/redesign/WorldBank.png"  alt=""></a>
+                            <a><img src="https://www.dasaran.am/static/img/redesign/undp.png"  alt=""></a>
+                            <a><img src="https://www.dasaran.am/static/img/redesign/european_union.png"  alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}
